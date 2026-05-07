@@ -1,10 +1,10 @@
-import './App.module.css'
+import styles from './App.module.css'
 
 function App() {
   return (
-    <div>
-      <main>
-        <h2>Anime Station</h2>
+    <div className={styles.app}>
+      <main className={styles.main}>
+        <h2 className={styles.sectionTitle}>Anime Station</h2>
         <div>ここになんか作品</div>
       </main>
     </div>
