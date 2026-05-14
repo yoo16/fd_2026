@@ -9,7 +9,10 @@ function WorkCard({ work, onSelect }) {
                     className={styles.thumbnail}
                     alt={work.title} />
             </div>
-            {work.title}
+            {/* 作品の情報 */}
+            <div className={styles.body}>
+                <h2 className={styles.title}>{work.title}</h2>
+            </div>
         </div>
     )
 }
