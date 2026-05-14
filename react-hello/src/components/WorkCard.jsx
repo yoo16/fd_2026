@@ -1,7 +1,8 @@
+import styles from './WorkCard.module.css'
 
 function WorkCard({ work, onSelect }) {
     return (
-        <div key={work.id} onClick={() => onSelect(work)}>
+        <div className={styles.card} onClick={() => onSelect(work)}>
             {work.title}
         </div>
     )
