@@ -1,12 +1,12 @@
 
-function WorkList({ works }) {
+function WorkList({ works, onSelect }) {
     return (
         <div>
             <div>{works.length}作品</div>
             <div>
                 {
                     works.map(work => (
-                        <div key={work.id}>
+                        <div key={work.id} onClick={() => onSelect(work)}>
                             {work.title}
                         </div>
                     ))
