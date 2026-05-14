@@ -4,8 +4,10 @@ function WorkCard({ work, onSelect }) {
     return (
         <div className={styles.card} onClick={() => onSelect(work)}>
             {/* 画像領域 */}
-            <div>
-                <img src={work.image} alt={work.title} />
+            <div className={styles.thumbnailWrapper}>
+                <img src={work.image}
+                    className={styles.thumbnail}
+                    alt={work.title} />
             </div>
             {work.title}
         </div>
