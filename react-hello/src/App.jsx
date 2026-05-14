@@ -12,7 +12,10 @@ function App() {
 
       <main className={styles.main}>
         <h2 className={styles.sectionTitle}>Anime Station</h2>
-        <WorkList works={works} />
+        <WorkList
+          works={works}
+          onSelect={(work) => console.log(work)}
+        />
       </main>
 
       <Footer />
