@@ -6,7 +6,7 @@ function WorkList({ works }) {
             <div>
                 {
                     works.map(work => (
-                        <div>
+                        <div key={work.id}>
                             {work.title}
                         </div>
                     ))
