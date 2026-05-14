@@ -1,4 +1,5 @@
 import styles from './WorkList.module.css'
+import WorkCard from './WorkCard'
 
 function WorkList({ works, onSelect }) {
     return (
@@ -7,9 +8,10 @@ function WorkList({ works, onSelect }) {
             <div className={styles.grid}>
                 {
                     works.map(work => (
-                        <div key={work.id} onClick={() => onSelect(work)}>
-                            {work.title}
-                        </div>
+                        <WorkCard
+                            key={work.id}
+                            work={work}
+                            onSelect={onSelect} />
                     ))
                 }
             </div>
