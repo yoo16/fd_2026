@@ -1,8 +1,12 @@
+import styles from './SearchBar.module.css'
+
 function SearchBar({ query, onQueryChange }) {
     return (
-        <div>
-            <section>
-                <input type="text"
+        <div className={styles.searchBar}>
+            <section className={styles.section}>
+                <input
+                    className={styles.input}
+                    type="text"
                     value={query}
                     onChange={(e) => onQueryChange(e.target.value)}
                 />
