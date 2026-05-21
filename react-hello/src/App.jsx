@@ -25,10 +25,13 @@ function App() {
 
       <Footer />
 
-      <Modal 
-        work={works[0]}
-        onClose={() => console.log('Modal closed')}
-      />
+      {selectedWork && (
+        <Modal
+          work={works[0]}
+          onClose={() => console.log('Modal closed')}
+        />
+      )}
+      }
     </div>
   )
 }
