@@ -1,8 +1,11 @@
-function SearchBar() {
+function SearchBar({ query, onQueryChange }) {
     return (
         <div>
             <section>
-                検索キーワード
+                <input type="text"
+                    value={query}
+                    onChange={(e) => onQueryChange(e.target.value)}
+                />
             </section>
             <section>
                 ジャンル選択
