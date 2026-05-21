@@ -17,9 +17,9 @@ function App() {
   const genres = ['すべて', ...new Set(works.map((w) => w.genre))]
 
   // 全作品 works から、title を 検索キーワード query で検索
-  const filteredWorks = works.filter((work) =>
-    work.title.includes(query)
-  )
+  const filteredWorks = works
+    .filter((w) => selectedGenre === 'すべて' || w.genre === selectedGenre)
+    .filter((w) => w.title.includes(query))
 
   return (
     <div className={styles.app}>
@@ -28,6 +28,9 @@ function App() {
       <SearchBar
         query={query}
         onQueryChange={setQuery}
+        genres={genres}
+        selectedGenre={selectedGenre}
+        onGenreChange={setSelectedGenre}
       />
 
       <main className={styles.main}>
