@@ -31,7 +31,6 @@ function App() {
           onClose={() => console.log('Modal closed')}
         />
       )}
-      }
     </div>
   )
 }
