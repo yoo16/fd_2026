@@ -5,8 +5,12 @@ import WorkList from './components/WorkList';
 import Modal from './components/Modal';
 // モックデータの読み込み
 import { works } from './data/works';
+// useState をインポート: 状態管理のために必要
+import { useState } from 'react';
 
 function App() {
+  const [selectedWork, setSelectedWork] = useState(null)
+
   return (
     <div className={styles.app}>
       <Header />
