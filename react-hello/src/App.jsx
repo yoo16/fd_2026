@@ -11,6 +11,7 @@ import { useState } from 'react';
 
 function App() {
   const [selectedWork, setSelectedWork] = useState(null)
+  const [query, setQuery] = useState("")
 
   return (
     <div className={styles.app}>
