@@ -19,7 +19,7 @@ function App() {
         <h2 className={styles.sectionTitle}>作品リスト</h2>
         <WorkList
           works={works}
-          onSelect={(work) => console.log(work)}
+          onSelect={(work) => setSelectedWork(work)}
         />
       </main>
 
@@ -27,8 +27,8 @@ function App() {
 
       {selectedWork && (
         <Modal
-          work={works[0]}
-          onClose={() => console.log('Modal closed')}
+          work={selectedWork}
+          onClose={() => setSelectedWork(null)}
         />
       )}
     </div>
