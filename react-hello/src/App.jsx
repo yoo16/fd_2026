@@ -12,6 +12,10 @@ import { useState } from 'react';
 function App() {
   const [selectedWork, setSelectedWork] = useState(null)
   const [query, setQuery] = useState("")
+  // 全作品 works から、title を 検索キーワード query で検索
+  const filteredWorks = works.filter((work) =>
+    work.title.includes(query)
+  )
 
   return (
     <div className={styles.app}>
@@ -25,7 +29,7 @@ function App() {
       <main className={styles.main}>
         <h2 className={styles.sectionTitle}>作品リスト</h2>
         <WorkList
-          works={works}
+          works={filteredWorks}
           onSelect={(work) => setSelectedWork(work)}
         />
       </main>
