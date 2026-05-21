@@ -17,7 +17,10 @@ function App() {
     <div className={styles.app}>
       <Header />
 
-      <SearchBar />
+      <SearchBar
+        query={query}
+        onQueryChange={setQuery}
+      />
 
       <main className={styles.main}>
         <h2 className={styles.sectionTitle}>作品リスト</h2>
