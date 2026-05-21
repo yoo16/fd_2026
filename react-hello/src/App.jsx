@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WorkList from './components/WorkList';
 import Modal from './components/Modal';
+import SearchBar from './components/SearchBar';
 // モックデータの読み込み
 import { works } from './data/works';
 // useState をインポート: 状態管理のために必要
@@ -14,6 +15,8 @@ function App() {
   return (
     <div className={styles.app}>
       <Header />
+
+      <SearchBar />
 
       <main className={styles.main}>
         <h2 className={styles.sectionTitle}>作品リスト</h2>
