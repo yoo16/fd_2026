@@ -12,6 +12,10 @@ import { useState } from 'react';
 function App() {
   const [selectedWork, setSelectedWork] = useState(null)
   const [query, setQuery] = useState("")
+  const [selectedGenre, setSelectedGenre] = useState('すべて')
+  // works の中から、genre を抜き取って重複を排除して配列
+  const genres = ['すべて', ...new Set(works.map((w) => w.genre))]
+
   // 全作品 works から、title を 検索キーワード query で検索
   const filteredWorks = works.filter((work) =>
     work.title.includes(query)
