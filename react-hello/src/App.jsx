@@ -2,6 +2,7 @@ import styles from './App.module.css'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WorkList from './components/WorkList';
+import Modal from './components/Modal';
 // モックデータの読み込み
 import { works } from './data/works';
 
@@ -19,6 +20,8 @@ function App() {
       </main>
 
       <Footer />
+
+      <Modal />
     </div>
   )
 }
