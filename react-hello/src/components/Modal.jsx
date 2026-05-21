@@ -1,3 +1,4 @@
+// rfce のスニペットを使うと便利
 function Modal() {
     return (
         <div>
@@ -5,5 +6,4 @@ function Modal() {
         </div>
     )
 }
-
 export default Modal
