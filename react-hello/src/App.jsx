@@ -21,7 +21,10 @@ function App() {
 
       <Footer />
 
-      <Modal />
+      <Modal 
+        work={works[0]}
+        onClose={() => console.log('Modal closed')}
+      />
     </div>
   )
 }
