@@ -31,7 +31,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(selectedGenre + 'が変更されたときに実行')
+    console.log(selectedGenre + 'に変更されたときに実行')
   }, [selectedGenre]);
 
   return (
