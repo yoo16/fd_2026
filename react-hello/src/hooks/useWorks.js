@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+const API_URL = import.meta.env.VITE_API_URL
+
 function useWorks() {
     // 作品データを管理するための状態
     const [works, setWorks] = useState([])
@@ -9,7 +11,7 @@ function useWorks() {
         // APIサーバから作品データを取得
         async function fetchWorks() {
             // json-server に APIリクエスト
-            const response = await fetch('http://localhost:3001/works')
+            const response = await fetch(`${API_URL}/works`)
             // JSONをJSオブジェクトに変換
             const data = await response.json()
             // 作品データを状態に保存
