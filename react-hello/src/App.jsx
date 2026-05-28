@@ -7,7 +7,8 @@ import SearchBar from './components/SearchBar';
 // モックデータの読み込み
 import { works } from './data/works';
 // useState をインポート: 状態管理のために必要
-import { useState } from 'react';
+// useEffect をインポート: データのフェッチや副作用の処理に必要
+import { useState, useEffect } from 'react';
 
 function App() {
   const [selectedWork, setSelectedWork] = useState(null)
