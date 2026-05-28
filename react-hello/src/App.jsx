@@ -12,6 +12,9 @@ import useWorks from './hooks/useWorks';
 import { useState, useEffect } from 'react';
 
 function App() {
+  // カスタムHooksを使って、works を読み込み
+  const { works } = useWorks()
+
   const [selectedWork, setSelectedWork] = useState(null)
   const [query, setQuery] = useState("")
   const [selectedGenre, setSelectedGenre] = useState('すべて')
