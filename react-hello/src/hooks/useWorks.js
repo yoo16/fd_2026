@@ -8,10 +8,14 @@ function useWorks() {
     useEffect(() => {
         // APIサーバから作品データを取得
         async function fetchWorks() {
+            // json-server に APIリクエスト
             const response = await fetch('http://localhost:3001/works')
+            // JSONをJSオブジェクトに変換
             const data = await response.json()
+            // 作品データを状態に保存
             setWorks(data)
         }
+        // 作品データを取得する関数実行
         fetchWorks()
     }, [])
 
