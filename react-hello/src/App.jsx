@@ -22,6 +22,18 @@ function App() {
     .filter((w) => selectedGenre === 'すべて' || w.genre === selectedGenre)
     .filter((w) => w.title.includes(query))
 
+  useEffect(() => {
+    console.log('毎回実行')
+  });
+
+  useEffect(() => {
+    console.log('初回のみ実行')
+  }, []);
+
+  useEffect(() => {
+    console.log(selectedGenre + 'が変更されたときに実行')
+  }, [selectedGenre]);
+
   return (
     <div className={styles.app}>
       <Header />
