@@ -4,7 +4,10 @@ function useWorks() {
     // 作品データを管理するための状態
     const [works, setWorks] = useState([])
 
-    // コンポーネントが読み込まれたときにAPIサーバから作品データを取得
+    // コンポーネントが初回読み込まれたときにAPIサーバから作品データを取得
+    useEffect(() => {
+
+    }, [])
 
     // 作品データを返す
     return { works }
