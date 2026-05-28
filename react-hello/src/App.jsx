@@ -5,7 +5,8 @@ import WorkList from './components/WorkList';
 import Modal from './components/Modal';
 import SearchBar from './components/SearchBar';
 // モックデータの読み込み
-import { works } from './data/works';
+// import { works } from './data/works';
+import useWorks from './hooks/useWorks';
 // useState をインポート: 状態管理のために必要
 // useEffect をインポート: データのフェッチや副作用の処理に必要
 import { useState, useEffect } from 'react';
