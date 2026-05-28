@@ -1,9 +1,9 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
 function useWorks() {
-    return (
-        {}
-    )
+    const [works, setWorks] = useState([])
+
+    return { works }
 }
 
 export default useWorks
