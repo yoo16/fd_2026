@@ -20,7 +20,8 @@ function useWorks() {
                 // 作品データを状態に保存
                 setWorks(data)
             } catch (error) {
-                setError(error.message)
+                console.error(error)
+                setError('作品データの取得に失敗しました')
             } finally {
                 setLoading(false)
             }
