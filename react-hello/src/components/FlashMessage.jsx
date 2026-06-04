@@ -5,9 +5,14 @@ function FlashMessage({ message, type = 'error' }) {
     const [dissmissed, setDismissed] = useState(false)
     const duration = 3000;
 
-    const timer = setTimeout(() => {
-        setDismissed(true)
-    }, duration)
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setDismissed(true)
+        }, duration)
+        // クリンアップ関数
+        return () => clearTimeout(timer)
+    }, [])
+
 
     if (!message || dissmissed) return null
 
