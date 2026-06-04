@@ -5,6 +5,8 @@ const API_URL = import.meta.env.VITE_API_URL
 function useWorks() {
     // 作品データを管理するための状態
     const [works, setWorks] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     // コンポーネントが初回読み込まれたときに
     useEffect(() => {
@@ -22,7 +24,7 @@ function useWorks() {
     }, [])
 
     // 作品データを返す
-    return { works }
+    return { works, loading, error }
 }
 
 export default useWorks
