@@ -12,13 +12,20 @@ function useWorks() {
     useEffect(() => {
         // APIサーバから作品データを取得
         async function fetchWorks() {
-            // json-server に APIリクエスト
-            const response = await fetch(`${API_URL}/works`)
-            // JSONをJSオブジェクトに変換
-            const data = await response.json()
-            // 作品データを状態に保存
-            setWorks(data)
+            try {
+                // json-server に APIリクエスト
+                const response = await fetch(`${API_URL}/works`)
+                // JSONをJSオブジェクトに変換
+                const data = await response.json()
+                // 作品データを状態に保存
+                setWorks(data)
+            } catch (error) {
+                setError(error.message)
+            } finally {
+                setLoading(false)
+            }
         }
+
         // 作品データを取得する関数実行
         fetchWorks()
     }, [])
