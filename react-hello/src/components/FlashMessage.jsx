@@ -13,7 +13,6 @@ function FlashMessage({ message, type = 'error' }) {
         return () => clearTimeout(timer)
     }, [])
 
-
     if (!message || dissmissed) return null
 
     return (
