@@ -48,7 +48,7 @@ function App() {
 
       <Header />
 
-      <FlashMessage message="こんにちは" type="error" />
+      <FlashMessage message="成功しました！" type="success" />
 
       <SearchBar
         query={query}
