@@ -1,8 +1,10 @@
+import styles from './Spinner.module.css'
+
 // rfce
 function Spinner() {
     return (
-        <div>
-            Spinner
+        <div className={styles.wrapper}>
+            <div className={styles.spinner}></div>
         </div>
     )
 }
