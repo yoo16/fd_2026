@@ -17,7 +17,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   // カスタムHooksを使って、works を読み込み
-  const { works } = useWorks()
+  const { works, loading, error } = useWorks()
 
   const [selectedWork, setSelectedWork] = useState(null)
   const [query, setQuery] = useState("")
@@ -44,11 +44,11 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <LoadingModal isOpen={false} message="Loading..." />
+      <LoadingModal isOpen={loading} message="Loading..." />
 
       <Header />
 
-      <FlashMessage message="成功しました！" type="success" />
+      <FlashMessage message={error} type="success" />
 
       <SearchBar
         query={query}
