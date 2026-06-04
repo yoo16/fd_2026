@@ -4,6 +4,8 @@ import Footer from './components/Footer';
 import WorkList from './components/WorkList';
 import Modal from './components/Modal';
 import SearchBar from './components/SearchBar';
+// ローディングモーダルのコンポーネント
+import LoadingModal from './components/LoadingModal';
 // モックデータの読み込み
 // import { works } from './data/works';
 import useWorks from './hooks/useWorks';
@@ -40,6 +42,8 @@ function App() {
 
   return (
     <div className={styles.app}>
+      <LoadingModal />
+
       <Header />
 
       <SearchBar
