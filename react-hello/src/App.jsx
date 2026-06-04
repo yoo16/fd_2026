@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <LoadingModal />
+      <LoadingModal isOpen={false} message="Loading..." />
 
       <Header />
 
