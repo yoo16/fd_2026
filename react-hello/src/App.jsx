@@ -6,6 +6,8 @@ import Modal from './components/Modal';
 import SearchBar from './components/SearchBar';
 // ローディングモーダルのコンポーネント
 import LoadingModal from './components/LoadingModal';
+// フラッシュメッセージのコンポーネント
+import FlashMessage from './components/FlashMessage';
 // モックデータの読み込み
 // import { works } from './data/works';
 import useWorks from './hooks/useWorks';
@@ -45,6 +47,8 @@ function App() {
       <LoadingModal isOpen={false} message="Loading..." />
 
       <Header />
+
+      <FlashMessage message="こんにちは" type="error" />
 
       <SearchBar
         query={query}
