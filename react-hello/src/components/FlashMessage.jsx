@@ -1,7 +1,8 @@
+import styles from './FlashMessage.module.css'
 
 function FlashMessage({ message, type = 'error' }) {
     return (
-        <div>
+        <div className={`${styles.flash} ${styles[type]}`}>
             <div>{message}</div>
         </div>
     )
