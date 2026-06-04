@@ -48,7 +48,7 @@ function App() {
 
       <Header />
 
-      <FlashMessage message={error} type="success" />
+      <FlashMessage message={error} type="error" />
 
       <SearchBar
         query={query}
