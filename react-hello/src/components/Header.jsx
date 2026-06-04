@@ -3,6 +3,7 @@
 
 import styles from './Header.module.css'
 import logo from '../assets/logo.svg'
+import ThemeButton from './ThemeButton';
 
 function Header() {
     return (
@@ -11,6 +12,7 @@ function Header() {
                 <img src={logo} alt="Logo" />
             </div>
             <div className={styles.title}>Anime Station</div>
+            <ThemeButton />
         </header>
     )
 }
