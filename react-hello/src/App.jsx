@@ -14,6 +14,8 @@ import useWorks from './hooks/useWorks';
 // useState をインポート: 状態管理のために必要
 // useEffect をインポート: データのフェッチや副作用の処理に必要
 import { useState, useEffect } from 'react';
+// テーマコンテキストをインポート
+import { ThemeContext } from './context/ThemeContext';
 
 function App() {
   // カスタムHooksを使って、works を読み込み
@@ -43,38 +45,40 @@ function App() {
   }, [selectedGenre]);
 
   return (
-    <div className={styles.app}>
-      <LoadingModal isOpen={loading} message="Loading..." />
+    <ThemeContext.Provider>
+      <div className={styles.app}>
+        <LoadingModal isOpen={loading} message="Loading..." />
 
-      <Header />
+        <Header />
 
-      <FlashMessage message={error} type="error" />
+        <FlashMessage message={error} type="error" />
 
-      <SearchBar
-        query={query}
-        onQueryChange={setQuery}
-        genres={genres}
-        selectedGenre={selectedGenre}
-        onGenreChange={setSelectedGenre}
-      />
-
-      <main className={styles.main}>
-        <h2 className={styles.sectionTitle}>作品リスト</h2>
-        <WorkList
-          works={filteredWorks}
-          onSelect={(work) => setSelectedWork(work)}
+        <SearchBar
+          query={query}
+          onQueryChange={setQuery}
+          genres={genres}
+          selectedGenre={selectedGenre}
+          onGenreChange={setSelectedGenre}
         />
-      </main>
 
-      <Footer />
+        <main className={styles.main}>
+          <h2 className={styles.sectionTitle}>作品リスト</h2>
+          <WorkList
+            works={filteredWorks}
+            onSelect={(work) => setSelectedWork(work)}
+          />
+        </main>
 
-      {selectedWork && (
-        <Modal
-          work={selectedWork}
-          onClose={() => setSelectedWork(null)}
-        />
-      )}
-    </div>
+        <Footer />
+
+        {selectedWork && (
+          <Modal
+            work={selectedWork}
+            onClose={() => setSelectedWork(null)}
+          />
+        )}
+      </div>
+    </ThemeContext.Provider>
   )
 }
 
