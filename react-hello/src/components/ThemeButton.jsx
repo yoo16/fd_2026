@@ -12,6 +12,7 @@ function ThemeButton() {
         <button
             type="button"
             className={styles.button}
+            onClick={toggleTheme}
         >
             <span className={styles.dot} aria-hidden="true" />
             <span>{theme}</span>
