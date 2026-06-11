@@ -21,6 +21,7 @@ function App() {
   // カスタムHooksを使って、works を読み込み
   const { works, loading, error } = useWorks()
 
+  const [theme, setTheme] = useState('light')
   const [selectedWork, setSelectedWork] = useState(null)
   const [query, setQuery] = useState("")
   const [selectedGenre, setSelectedGenre] = useState('すべて')
@@ -31,6 +32,14 @@ function App() {
   const filteredWorks = works
     .filter((w) => selectedGenre === 'すべて' || w.genre === selectedGenre)
     .filter((w) => w.title.includes(query))
+
+  // テーマ切り替えの関数
+  const toggleTheme = () => {
+    // 現在のテーマが light なら dark に、dark なら light に切り替える
+    const currentTheme = (theme === 'light') ? 'dark' : 'light'
+    // テーマをStateに保存
+    setTheme(currentTheme)
+  }
 
   useEffect(() => {
     console.log('毎回実行')
@@ -45,7 +54,7 @@ function App() {
   }, [selectedGenre]);
 
   return (
-    <ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className={styles.app}>
         <LoadingModal isOpen={loading} message="Loading..." />
 
