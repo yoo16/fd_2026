@@ -10,7 +10,7 @@ function App() {
   const [page, setPage] = useState('home')
 
   return (
-    <Layout>
+    <Layout onNavigate={setPage}>
       {page === 'home' && <Home />}
       {page === 'about' && <About />}
     </Layout>
