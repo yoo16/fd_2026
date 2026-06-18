@@ -6,9 +6,9 @@ function Layout({ children, onNavigate }) {
       <header className={styles.header}>
         <h1>サイトタイトル</h1>
 
-        <nav>
-          <button onClick={() => onNavigate('home')}>Home</button>
-          <button onClick={() => onNavigate('about')}>About</button>
+        <nav className={styles.nav}>
+          <button className={styles.navButton} onClick={() => onNavigate('home')}>Home</button>
+          <button className={styles.navButton} onClick={() => onNavigate('about')}>About</button>
         </nav>
 
       </header>
