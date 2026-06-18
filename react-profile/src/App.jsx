@@ -1,8 +1,11 @@
+// Layout コンポーネントをインポート
+import Layout from './components/Layout'
+
 function App() {
   return (
-    <div>
+    <Layout>
       メインページ
-    </div>
+    </Layout>
   )
 }
 
