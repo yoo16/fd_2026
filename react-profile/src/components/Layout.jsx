@@ -1,7 +1,9 @@
+import styles from './Layout.module.css'
+
 function Layout({ children, onNavigate }) {
   return (
-    <div>
-      <header>
+    <div className={styles.wrapper}>
+      <header className={styles.header}>
         <h1>サイトタイトル</h1>
 
         <nav>
@@ -11,11 +13,11 @@ function Layout({ children, onNavigate }) {
 
       </header>
 
-      <main>
+      <main className={styles.main}>
         {children}
       </main>
 
-      <footer>
+      <footer className={styles.footer}>
         <p>&copy; 2026 My App</p>
       </footer>
     </div>
