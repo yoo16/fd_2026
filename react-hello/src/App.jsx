@@ -55,7 +55,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className={styles.app}>
+      <div className={styles.app} data-theme={theme}>
         <LoadingModal isOpen={loading} message="Loading..." />
 
         <Header />
