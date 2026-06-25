@@ -1,10 +1,18 @@
 import styles from './Layout.module.css'
 import { Home, Info, Sparkles, BadgeCheck } from 'lucide-react'
+import { motion } from 'motion/react'
+// エイリアス（別名）※これはやってもいいし、やらなくてもいい
+const Motion = motion
 
 function Layout({ children, onNavigate }) {
   return (
     <div className={styles.wrapper}>
-      <header className={styles.header}>
+      <Motion.header
+        className={styles.header}
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: 'easeOut' }}
+      >
         <h1 className={styles.brand}>
           <Sparkles size={24} className={styles.brandIcon} />
           サイトタイトル
@@ -21,7 +29,7 @@ function Layout({ children, onNavigate }) {
           </button>
         </nav>
 
-      </header>
+      </Motion.header>
 
       <main className={styles.main}>
         {children}
