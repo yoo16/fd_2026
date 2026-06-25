@@ -14,19 +14,32 @@ function Layout({ children, onNavigate }) {
         transition={{ duration: 0.35, ease: 'easeOut' }}
       >
         <h1 className={styles.brand}>
-          <Sparkles size={24} className={styles.brandIcon} />
+          <Motion.div
+            animate={{ rotate: [0, 8, -8, 0], scale: [1, 1.08, 1] }}
+            transition={{ duration: 3, repeat: Infinity, repeatDelay: 1.5 }}
+          >
+            <Sparkles size={24} className={styles.brandIcon} />
+          </Motion.div>
           サイトタイトル
         </h1>
 
         <nav className={styles.nav}>
-          <button className={styles.navButton} onClick={() => onNavigate('home')}>
+          <Motion.button
+            className={styles.navButton}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            onClick={() => onNavigate('home')}>
             <Home size={20} />
             Home
-          </button>
-          <button className={styles.navButton} onClick={() => onNavigate('about')}>
+          </Motion.button>
+          <Motion.button
+            className={styles.navButton}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            onClick={() => onNavigate('about')}>
             <Info size={20} />
             About
-          </button>
+          </Motion.button>
         </nav>
 
       </Motion.header>

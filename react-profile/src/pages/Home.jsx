@@ -27,7 +27,7 @@ const itemVariants = {
 function Home() {
 
   return (
-    <section
+    <Motion.section
       className={styles.page}
       variants={pageVariants}
       initial="hidden"
@@ -73,7 +73,7 @@ function Home() {
           <p>{user.goal}</p>
         </article>
       </div>
-    </section>
+    </Motion.section>
   )
 }
 
